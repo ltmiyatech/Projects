@@ -1,18 +1,26 @@
 #File : Time_Adjustment.ps1
 #Prompt the user to enter time to adjust remaining hours
 #
+#input night clockn and clockout
 $yclockin = read-host "Clockin"
+#split minutes and hours, define, and initiate Double
+#splits are considered arrays using square brackets 0 for hours and 1 for minutes
 $yclockinsplit = ($yclockin).split(":")
 $yclockinsplit[0] = [Double]$yclockinsplit[0]
 $yclockinsplit[1] = [Double]$yclockinsplit[1]
+#input Clockout
 $yclockout = read-host "Clockout"
+#split minutes and hours, define, and initiate Double
+#splits are considered arrays using square brackets 0 for hours and 1 for minutes
 $yclockoutsplit = ($yclockout).split(":")
 $yclockoutsplit[0] = [Double]$yclockoutsplit[0]
 $yclockoutsplit[1] = [Double]$yclockoutsplit[1]
+# these are numbers to subtract that give a negative number to add .60 minute and subtract 1 hour.  You will see these between clockin/clockout overnight and clockin/lunchin lunchout/clockout morning
 $yoffset1 = read-host "Type 1 or 0"
 $yoffset1 = [Double]$yoffset1
 $yoffset2 = read-host "Type .60 or 0"
 $yoffset2 = [Double]$yoffset2
+#the minute part of the split array needs to convert the decimal value from time format h:r to rate of time .60.  they both need to be decimal values or you will get an error
 $ydecimal1 = $yclockoutsplit[1]/100
 $ydecimal1 = [Double]$ydecimal1
 $ydecimal2 = $yclockinsplit[1]/100
