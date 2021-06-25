@@ -1,5 +1,5 @@
 #File : Time_Adjustment.ps1
-#Prompt the user to convert Celsius in to Fahrenhet
+#Prompt the user to enter time to adjust remaining hours
 #
 $yclockin = read-host "Clockin"
 $yclockinsplit = ($yclockin).split(":")
@@ -111,15 +111,3 @@ $timefixremaininghoursavailable = [Math]::truncate($hoursequal40)
 $timefixremaininghoursavailable = [Double]$timefixremaininghoursavailable
 Write-Host "What is left to equal 40 Hours part (Available add or subtract)"
 $timefixremaininghoursavailable
-$timeadj = Read-Host "Timeadj"
-$timeadjsplit = ($timeadj).split(":")
-$timeadjsplit[0] = [Double]$timeadjsplit[0]
-$timeadjsplit[1] = [Double]$timeadjsplit[1]
-$decimin = $timeadj[1] / 100
-$decimin = [Double]$decimin
-$adjhour = $clockoutsplit[0] + $timeadjsplit[0]
-$adjhour = [Double]$adjhour
-$adjhour
-$adjmin = $decimin + $decimal3
-$adjmin = [Double]$adjmin
-$adjmin
