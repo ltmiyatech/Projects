@@ -1,0 +1,24 @@
+.\Time_Adjustment : File C:\Users\lmiya\Downloads\Projects-main\Projects-main\Time_Adjustment.ps1 cannot be loaded
+because running scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\Time_Adjustment
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+
+Need to be in Admin mode and add this command
+PS C:\WINDOWS\system32> Set-ExecutionPolicy RemoteSigned
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+
+
+
+cd C:\Users\lmiya\Downloads\Projects-main\Projects-main
+PS C:\Users\lmiya\Downloads\Projects-main\Projects-main> .\Time_Adjustment.ps1
